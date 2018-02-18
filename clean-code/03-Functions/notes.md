@@ -45,3 +45,29 @@ Don't be afraid to make name long. A long desciptive name is better than a short
 ### Function Arguments
 
 Not more than 3 arguments. Only if this is justifiable. Cause at 3 arguments, you need to make sure to follow the order, understand how you can skip etc. So if more than 3 -> go with an object argument.
+
+### Have no Side Effects
+
+Your function promises to do one thing, but also does other *hidden* things.
+
+### Command Query Separation
+
+Functions should either do something or answer something, but not both. Either your function should change the state of an object, or it should return some information about that object. Doing both often leads to confusion.
+
+### Extract Try/Catch Blocks
+
+They confuse the structure of the code and mix error processing with normal processing. Its better to extract the bodies of the try and catch blocks out into functions of their own.
+
+```java
+public void delete(Page page) {
+  try {
+    deletePageAndAllReference(page);
+  } catch (Exception e) {
+    logError(e);
+  }
+}
+```
+
+### Error Handling is one thing
+
+Functions should do one thing. Error handing is one thing. If a function handles errors, should do nothing more. The keyword try should be the first one of the function if exist. And nothing more than the catch and finally block.
