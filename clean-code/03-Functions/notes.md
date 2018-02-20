@@ -71,3 +71,7 @@ public void delete(Page page) {
 ### Error Handling is one thing
 
 Functions should do one thing. Error handing is one thing. If a function handles errors, should do nothing more. The keyword try should be the first one of the function if exist. And nothing more than the catch and finally block.
+
+### Don't repeat Yourself
+
+Duplication is a problem, because it bloats the code and will require double effort to change the algorithm
